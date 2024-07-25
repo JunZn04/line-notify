@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@line/bot-sdk": "^9.2.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "jwt-decode": "^4.0.0",
     "nodemon": "^3.1.4",
     "qs": "^6.12.3",
@@ -23,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "nodemon index.js",
+    "front": "nodemon index.js",
+    "back": "nodemon server.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -45,7 +48,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://JunZn04.github.io/line-notify",
   "devDependencies": {
     "gh-pages": "^6.1.1"
   }
