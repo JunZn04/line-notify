@@ -51,13 +51,12 @@ const Login = ({ setUserState }) => {
             navigate(`/recieve`);
           }
           else if (res.data.status == "errr") {
-            //setUserState(res.data.user);
             alert("Log in Failed!");
             setUserDetails({
               email: "",
               password: "",
             });
-          }//失敗後重新登入 並且清空輸入格的東西
+          }
         });
     }
   }, [formErrors, isSubmit]);
