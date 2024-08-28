@@ -1,0 +1,34 @@
+/* 登录成功页面的容器 */
+.login-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e0f7fa;
+    text-align: center;
+  }
+  
+  /* 标题样式 */
+  .login-success h1 {
+    font-size: 2.5rem;
+    color: #00796b;
+    margin-bottom: 20px;
+  }
+  
+  /* 链接样式 */
+  .login-success a {
+    font-size: 1.2rem;
+    color: #004d40;
+    text-decoration: none;
+    background-color: #b2dfdb;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .login-success a:hover {
+    background-color: #004d40;
+    color: #ffffff;
+  }
+  

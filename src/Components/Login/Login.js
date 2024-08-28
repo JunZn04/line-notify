@@ -40,17 +40,25 @@ const Login = ({ setUserState }) => {
     setFormErrors(validateForm(user));
     setIsSubmit(true);
   };
-
+//ADD LINE_ID CONFIRM 
   useEffect(() => {
+    localStorage.clear();
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       axios
         .post("http://localhost:8080/signin", user)
         .then((res) => {
-          if (res.data.status == "Success") {
+          if( res.status == '201'){
             alert("Log in Success!");
-            navigate(`/recieve`);
+            navigate(`/MainPage`);
           }
-          else if (res.data.status == "errr") {
+          else if( res.status == '200'){
+            alert("Line ID is missing, please bind your Line account.");
+            const userId = res.data.data[0].id.toString()
+            localStorage.setItem('userId', JSON.stringify(userId));
+            console.log(JSON.parse(localStorage.getItem('userId')))
+            navigate(`/Confirm`);
+          }
+          else{
             alert("Log in Failed!");
             setUserDetails({
               email: "",
@@ -104,9 +112,9 @@ const Login = ({ setUserState }) => {
             <button className={basestyle.button_common} onClick={loginHandler}>
               SIGN IN
             </button>
-            <button className={loginstyle.Line} onClick={loginEvent}>
+            {/* <button className={loginstyle.Line} onClick={loginEvent}>
               登錄使用 Line
-            </button>
+            </button> */}
             <NavLink className={loginstyle.NavLink} to="/">
               Create a new account
             </NavLink>

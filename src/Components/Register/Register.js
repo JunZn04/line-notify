@@ -73,7 +73,7 @@ const Register = () => {
     e.preventDefault();//停止事件的默認動作
     setFormerror(errorDetect(formData));//判斷input裡的資料有沒有錯誤
     setIsSubmit(true);
-    console.log('Detect:', formData);
+    // console.log('Detect:', formData);
   };//判斷格式是否有錯誤
 
   useEffect(() => {
@@ -81,9 +81,14 @@ const Register = () => {
       axios
         .post("http://localhost:8080/signup", formData)
         .then((res) => {
-          alert(res.data);
+          if( res.status == '201'){
+            alert("Register in Success!");
+            const userId = res.data.userId.toString()
+            localStorage.setItem('userId', JSON.stringify(userId));
+            console.log(JSON.parse(localStorage.getItem('userId')))
+            navigate("/Confirm")
+          }
         });
-      navigate("/");
     }
   }, [formerror, isSubmit])//如果無錯誤資訊，資料會存到資料庫裡並且連至sign in
 

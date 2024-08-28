@@ -33,6 +33,14 @@
     margin: 0 0 5%;
 }
 
+.login > form p {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    margin: 5% 0 5%;
+}
+
 
 .container{
     padding: 0;
@@ -46,7 +54,7 @@
 }
 
 .NavLink{
-    margin: 0px 116px 0px 116px;
+    margin: 10px 116px 5px 116px;
     color: #0a55c2;
     background: #fff;
     font-weight: bold;

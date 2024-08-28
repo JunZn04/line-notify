@@ -1,4 +1,4 @@
-/* ReceivePage.module.css */
+/* 
 .container {
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@
     justify-content: center;
     height: 100vh;
     text-align: center;
-    padding: 20px; /* 增加內邊距 */
+    padding: 20px; 
   }
   
   .content {
@@ -16,18 +16,18 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* 確保padding不會影響到總寬度 */
-    overflow: auto; /* 確保內容超出時可以滾動 */
+    box-sizing: border-box; 
+    overflow: auto; 
   }
   
   h1, h3 {
     margin: 10px 0;
-    word-break: break-word; /* 確保長單詞能換行 */
+    word-break: break-word; 
   }
   
   hr {
     margin: 20px 0;
-  }
+  } */
   
   /* a {
     display: inline-block;
@@ -42,4 +42,62 @@
   a:hover {
     background-color: #0056b3;
   } */
-  
+
+
+
+.container {
+  display: flex;
+  height: 100vh; /* 佔滿整個視口高度 */
+}
+
+/* 設定左邊內容區域的樣式 */
+.left-content {
+  flex: 1; /* 占滿剩餘空間，即 50% */
+  display: flex;
+  flex-direction: column; /* 使內容垂直排列 */
+  justify-content: center; /* 垂直置中 */
+  align-items: center; /* 水平置中 */
+  background-color: #f0f0f0;
+  padding: 20px;
+  box-sizing: border-box; /* 確保 padding 不會影響元素總寬度 */
+}
+
+/* 設定右邊嵌入區域的樣式 */
+.right-sidebar {
+  flex: 1; /* 占滿剩餘空間，即 50% */
+  background-color: #e0e0e0;
+  padding: 0; /* 去掉內邊距，讓 iframe 完全填滿 */
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  overflow: hidden; /* 隱藏內部滾動條 */
+}
+
+/* 設定左邊內容的文字和按鈕樣式 */
+.text-center {
+  text-align: center;
+  width: 100%; /* 確保文本區域寬度為容器寬度 */
+}
+
+.text-center p {
+  margin: 0 0 10px 0;
+}
+
+.text-center button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%; /* 使按鈕寬度與文本區域相同 */
+  box-sizing: border-box; /* 確保 padding 不會影響元素總寬度 */
+}
+
+/* iframe 的樣式 */
+.right-sidebar iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* 去掉邊框 */
+  overflow: hidden; /* 禁止 iframe 滑動 */
+  display: block; /* 确保 iframe 显示为块级元素 */
+  scrollbar-color: transparent transparent;
+  background-color: transparent;
+}
