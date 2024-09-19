@@ -76,7 +76,7 @@
 /* 設定左邊內容的文字和按鈕樣式 */
 .text-center {
   text-align: center;
-  width: 100%; /* 確保文本區域寬度為容器寬度 */
+  width: 60%; /* 確保文本區域寬度為容器寬度 */
 }
 
 .text-center p {

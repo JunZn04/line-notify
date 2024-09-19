@@ -1,0 +1,41 @@
+/* public/styles/styles.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 600px;
+  }
+  
+  .profile-picture-container {
+    position: relative;
+    width: 25vh; /* 视口宽度的25% */
+    height: 25vh; /* 视口高度的25% */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 50%; /* Optional: Makes the image circular */
+    background-color: #f0f0f0; /* Optional: Background color if image is not available */
+  }
+  
+  .profile-picture-container::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* Create a square container */
+  }
+  
+  .profile-picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+  }
+  

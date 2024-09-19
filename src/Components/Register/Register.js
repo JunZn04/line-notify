@@ -23,7 +23,7 @@ const Register = () => {
     lname: "",
     email: "",
     password: "",
-    cpassword: "",
+    cpassword: ""
   });//使用者資料
   const [formerror, setFormerror] = useState({});//儲存錯誤資訊
   const [isSubmit, setIsSubmit] = useState(false);
@@ -81,12 +81,24 @@ const Register = () => {
       axios
         .post("http://localhost:8080/signup", formData)
         .then((res) => {
+          console.log("1")
           if( res.status == '201'){
             alert("Register in Success!");
             const userId = res.data.userId.toString()
             localStorage.setItem('userId', JSON.stringify(userId));
             console.log(JSON.parse(localStorage.getItem('userId')))
             navigate("/Confirm")
+          }
+          else if ( res.status == "200" ){
+            alert("Email has been registe")
+            setFormData({
+              fname: "",
+              lname: "",
+              email: "",
+              password: "",
+              cpassword: ""
+            })
+            console.log(formData)
           }
         });
     }
@@ -106,7 +118,7 @@ const Register = () => {
               type="text"
               name="fname"
               id="fname"
-              values={formData.fname}
+              value={formData.fname}
               onChange={handleChange}
             />
           </label>

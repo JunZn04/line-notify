@@ -19,3 +19,5 @@ npm i @line/bot-sdk --save
 npm i mysql
 
 npm i cors
+
+npm install ws
